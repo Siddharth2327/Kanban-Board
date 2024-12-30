@@ -6,6 +6,7 @@ const textArea = document.querySelector('.text-area')
 const mainCont = document.querySelector('.ticket-main-container')
 const allPriorityColors = document.querySelectorAll('.priority-color')
 const toolboxColors = document.querySelectorAll('.color-box')
+const createBtn = document.querySelector('.create-button')
 
 const lockClose = 'fa-lock'
 const lockOpen = 'fa-lock-open'
@@ -174,9 +175,8 @@ function createTicket(color, id, task){
 
 // MODAL POP UP MANIPULATIONS AND TRIGGERING TICKET GENERATION
 
-// Adding key event on the modal cont
-modalCont.addEventListener('keydown', function(e){
-        if(e.key == 'Shift'){
+// Adding create buttton event on the modal cont
+createBtn.addEventListener('click', function(e){
             const task = textArea.value;
             const id = (Math.random()*1000).toFixed(0)
             createTicket(taskColor, id, task);
@@ -187,8 +187,8 @@ modalCont.addEventListener('keydown', function(e){
             addFlag = false;
             ticketsarr.push({ TicketColor: taskColor, id, task});
             updatelocalstorage()    
-        }
-    });
+});
+
 
 // adding border while selecting the color of the task in modal pop up
 allPriorityColors.forEach(function(colorElem){
