@@ -168,6 +168,21 @@
     width: 70%;
     font-size: 2rem;
     font-family:'Lobster', cursive;
+    position: relative;
+}
+.create-button{
+    height: 2rem;
+    position: absolute;
+    bottom: 2%;
+    right: 32%;
+    border-radius: 10%;
+    background-color:rgb(103, 102, 102);   
+    color: white;
+    cursor: pointer;
+    font-family:'Lobster', cursive;
+}
+.create-button:hover{
+    transform: scale(1.05);
 }
 .all-priority-color-containers{
     height: 100%;
