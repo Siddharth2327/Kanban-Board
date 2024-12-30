@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet"> <!-- Using Poppins font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- nav bar -->
+     <div class="toolbox-container">
+        <div class="filter-buttons">
+            <div class="lightpink color-box" data-tooltip="To-Do"></div>
+            <div class="lightgreen color-box" data-tooltip="In-progress" ></div>
+            <div class="lightblue color-box" data-tooltip="To-Review" ></div>
+            <div class="black color-box" data-tooltip="Done"></div>
+        </div>
+        <div class="action-buttons-container">
+            <div class="add-btn" data-tooltip="Add new task">
+                <i class="fa-regular fa-plus"></i>
+            </div>
+            <div class="remove-btn" data-tooltip="Delete task">
+                <i class="fa-solid fa-trash"></i>
+            </div>
+        </div>
+        <div class="name-logo">
+            <h1>Kanban Board</h1>
+        </div>
+     </div>
+     
+
+     <!-- task-modal pop up -->
+     <div class="modal-container">
+        <textarea class="text-area" placeholder="click shift to add the task"></textarea>
+        
+        <div class="all-priority-color-containers">
+            <div class="lightpink priority-color active"></div>
+            <div class="lightgreen priority-color"></div>
+            <div class="lightblue priority-color"></div>
+            <div class="black priority-color"></div>
+        </div>
+     </div>
+
+
+    <!-- ticket design -->
+     <div class="ticket-main-container">
+        <!-- <div class="ticket-container">
+            <div class="ticket-color"></div>
+            <div class="ticket-id"></div>
+            <div class="ticket-area"></div>
+            <div class="ticket-lock">
+                <i class="fa-solid fa-lock"></i>
+                <i class="fa-solid fa-lock-open"></i>
+        </div>
+        </div> -->
+        <!-- we have commented this out so that we can generate t]w\during the event in js file -->
+     </div>
+     
+    
+
+
+
+
+
+</body>
+<script src="./script.js"></script>
+</html>

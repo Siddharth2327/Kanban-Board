@@ -1,0 +1,247 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
+
+/*1. NAV BAR DESIGN */
+.toolbox-container{
+    background-color: grey;
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    /* justify-content: center; -> we dont need this as we can adjust by giving margin left */
+    align-items: center;
+}
+
+/* filter color button designs */
+.filter-buttons{
+    background-color: rgb(103, 102, 102);
+    height: 3.5rem;
+    width: 18rem;
+    /* margin-right: 30rem; -> this is used when justify content = center is used s*/
+    margin-left: 4rem;
+    display: flex;
+    /* gap: 1.2rem; -> this can be done with space evenly in justify content */
+    justify-content: space-evenly;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.filter-buttons:hover{
+    background-color: #505050;
+    transform: scale(1.05); /* Slight zoom effect */
+}
+.color-box{
+    height: 1.5rem;
+    width: 3rem;
+    cursor: pointer;
+    border-radius: 0.2rem; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    transition: transform 0.2s ease; /* Hover animation */
+}
+.color-box::after{
+
+        content: attr(data-tooltip);
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #333;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 12px;
+        visibility: hidden;  /* Hidden by default */
+        opacity: 0;
+        transition: opacity 2s ease;
+        white-space: nowrap;
+}
+.color-box:hover{
+    transform: scale(1.1); /* Enlarge slightly on hover */
+}
+.color-box:hover::after{
+
+    visibility: visible;
+    opacity: 1;
+}
+
+.lightpink{
+    background-color: lightpink;
+}
+.lightgreen{
+    background-color: lightgreen;
+}
+.lightblue{
+    background-color: lightblue;
+}
+.black{
+    background-color: black;    
+}
+
+/* action buttons design */
+.action-buttons-container{
+    height: 3.5rem;
+    width: 8rem;
+    margin-left: 4rem;
+    display: flex;
+    align-items: center;
+}
+.action-buttons-container:hover{
+    transform: scale(1.05); /* Slight zoom effect */
+}
+.action-buttons-container>*{
+    height: 100%;
+    width: 50%;
+    background-color: rgb(103, 102, 102);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add hover transition*/
+}
+.action-buttons-container>*::after{
+    content: attr(data-tooltip);
+    position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #333;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 12px;
+        visibility: hidden;  /* Hidden by default */
+        opacity: 0;
+        transition: opacity 2s ease;
+        white-space: nowrap;
+}
+.action-buttons-container>*:hover::after{
+    visibility: visible;
+    opacity: 1;
+}
+.add-btn:hover{
+    background-color: rgb(47, 162, 47);
+}
+.remove-btn:hover{
+    background-color: rgb(252, 40, 40);
+}
+.name-logo{
+     font-family: 'Lobster', cursive;
+     margin-left: 42rem; 
+     height: 4rem;
+     width: 15rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 1000px;
+     background-image: linear-gradient(to bottom right, white, grey);
+     color: #505050;
+}
+
+/*2. MODAL CONTAINER */
+
+.modal-container{
+    height: 50vh;
+    width:45vw;
+    display: none;
+    /* to make this center */
+    position: absolute;
+    top: 30%;
+    left: 27%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    /* display: block; */
+}
+.text-area{
+    /* to remove the text area resize option */
+    resize: none;
+    border: none;
+    outline: none;
+    background-color: #dfe4ea;
+    height: 100%;
+    width: 70%;
+    font-size: 2rem;
+    font-family:'Lobster', cursive;
+}
+.all-priority-color-containers{
+    height: 100%;
+    width: 30%;
+    background-color: rgb(103, 102, 102);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; since we use justify content space evenly this is not required */
+    justify-content: space-evenly;
+    align-items: center;
+}
+.priority-color{
+    height: 3rem;
+    width: 5rem;
+    cursor:pointer;
+    border-radius: 0.5rem;
+    
+}
+.priority-color:hover{
+     box-shadow: 1px 1px white, -1px -1px black; 
+    
+}
+
+
+/*3. TICKET CONTAINER */
+
+.ticket-main-container{
+    /* we are going to use multiple tickets it should be displayed side by side */
+    /* so we use display flex property */
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+.ticket-container{
+    height: 12rem;
+    width: 15rem;
+    background-color: wheat;
+    border-radius: 8px;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.4);
+    font-family:'Lobster', cursive;
+    overflow: hidden; /*prevent content overflow*/
+    
+}
+.ticket-container:hover{
+    transform: scale(1.05);
+}
+.ticket-color{
+    /* background-color: black; */
+    height: 1rem;
+    cursor:pointer
+}
+.ticket-id{
+    background-color: lightcyan;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold; /*highlights the id */
+}
+.ticket-lock{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.3rem;
+    margin-top: 100px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+/* ticket area takes the remaining space and properties of ticket container */
+
+/* 4. add borders while selecting the filter colors while adding task in modal pop up */
+.active{
+    border: 3px solid red;
+    box-shadow: 0 0 6px red; /*add glowing effect*/
+}
