@@ -1,13 +1,13 @@
 // KANBAN BOARD TUTORIAL MANIPULATIONS
 const tutorialarr = [
-    "Welcome to your Kanban Board! Here's how you get started.",
-    "Click on add '+' button to add new task.",
-    "Select the priority of the task and click on 'create' button.",
-    "To view the priority of different colors, click on the various color options in the filter tab at the top.",
-    "Click on the filter colors to filter the tasks. To view all tasks, double-click on any color.",
-    "Edit the task directly from the ticket by unlocking the lock icon, then lock it again to save.",
-    "Change the task priority by clicking the color band at the top of the ticket.",
-    "Click the delete button to activate it, then select a task to delete. Click the delete button again to deactivate it."
+    "1. Welcome to your Kanban Board! Here's how you get started.",
+    "2. Click on add '+' button to add new task.",
+    "3. Select the priority of the task and click on 'create' button.",
+    "4. To view the priority of different colors, click on the various color options in the filter tab at the top.",
+    "5. Click on the filter colors to filter the tasks. To view all tasks, double-click on any color.",
+    "6. Edit the task directly from the ticket by unlocking the lock icon, then lock it again to save.",
+    "7. Change the task priority by clicking the color band at the top of the ticket.",
+    "8. Click the delete button to activate it, then select a task to delete. Click the delete button again to deactivate it."
 ]
 
 const tutorialContainer = document.querySelector('.tutorial-container');
@@ -38,6 +38,9 @@ function updateTutorialStep(){
     // updating next button to end button at last tutorial
     if(currentStep == tutorialarr.length -1){
         nextBtn.innerText = 'End'
+    }
+    else{
+        nextBtn.innerText = 'Next'
     }
 
     // closing the tutorial when clicking on close
