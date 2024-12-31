@@ -49,10 +49,10 @@
     background-color: rgb(95, 95, 95);
 }
 #next-step-button{
-    margin-right: 10px;
+    margin-left: 10px;
 }
 #prev-step-button{
-    margin-left: 10px;
+    margin-right: 10px;
 }
 
 
