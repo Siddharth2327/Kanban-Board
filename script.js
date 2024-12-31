@@ -1,6 +1,6 @@
 // KANBAN BOARD TUTORIAL MANIPULATIONS
 const tutorialarr = [
-    "Welcome to your Knaban Board! Here's how you get started.",
+    "Welcome to your Kanban Board! Here's how you get started.",
     "Click on add '+' button to add new task.",
     "Select the priority of the task and click on 'create' button.",
     "To view the priority of different colors, click on the various color options in the filter tab at the top.",
