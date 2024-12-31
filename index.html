@@ -10,6 +10,7 @@
 </head>
 <body>
     <!-- nav bar -->
+    <div class="kanban-board">
      <div class="toolbox-container">
         <div class="filter-buttons">
             <div class="lightpink color-box" data-tooltip="To-Do"></div>
@@ -35,6 +36,7 @@
      <div class="modal-container">
         <textarea class="text-area" placeholder="1.lightpink->To-do 2.lightgreen->In-progress 3.lightblue->To-Review 4.Black->Done"></textarea>
         <button type="submit" class="create-button">Create</button>
+        
         <div class="all-priority-color-containers">
             <div class="lightpink priority-color active"></div>
             <div class="lightgreen priority-color"></div>
@@ -57,6 +59,16 @@
         </div> -->
         <!-- we have commented this out so that we can generate t]w\during the event in js file -->
      </div>
+    </div>
+
+
+    <div class="tutorial-container">
+        <div class="tutorial-popup">
+            <p id="content-text">Welcome to your Knaban Board! Here's how you get started.</p>
+            <button id="next-step-button">Next</button>
+            <button id="prev-step-button">Prev</button>
+        </div>
+    </div>
      
     
 
