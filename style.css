@@ -3,6 +3,58 @@
     margin: 0;
 }
 
+/* TUTORIAL POP UP DESIGN */
+.tutorial-container{
+    border: none;
+    height: 100%;
+    width: 100%;
+    background-color:rgba(0,0,0,0.5); 
+    position: fixed;
+    top:0;
+    bottom:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.tutorial-popup{
+    border: none;
+    background-image: linear-gradient(to bottom right, white, grey);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 80%;
+    text-align: center;
+    box-shadow:0 4px 6px rgba(0, 0, 0, 0.3);
+
+}
+#content-text{
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+.tutorial-popup>button{
+    border:none;
+    background-color: grey;
+    color: white;
+    font-size: 1rem;
+    height: 1.5rem;
+    width: 2.5rem;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding: 2px;
+}
+.tutorial-popup>button:hover{
+    transform: scale(1.09);
+    background-color: rgb(95, 95, 95);
+}
+#next-step-button{
+    margin-right: 10px;
+}
+#prev-step-button{
+    margin-left: 10px;
+}
+
 
 
 
@@ -206,7 +258,6 @@
     
 }
 
-
 /*3. TICKET CONTAINER */
 
 .ticket-main-container{
@@ -260,8 +311,6 @@
     border: 3px solid red;
     box-shadow: 0 0 6px red; /*add glowing effect*/
 }
-
-
 
 
 /* MEDIA QUERIES FOR DIFFERENT SCREEN SIZES */
