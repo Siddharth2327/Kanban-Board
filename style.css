@@ -402,11 +402,12 @@
         width: auto; /* it will be adjusted as per the screen size since it is positioned absolute to whole body*/
     }
 
-    /* Adjust color box size */
-    .color-box {
-        width: auto;  /* Slightly larger color boxes */
+    /* if we give width and height to auto then there is a glitch so that the filter buttons are vanished or moved some where */
+    /*  so for mobile screens we don t need to set height and width to auto 
+        .color-box {
+        width: auto;
         height: auto;
-    }
+    } */
 
     /* Stacking tickets vertically */
     .ticket-main-container {
