@@ -1,13 +1,13 @@
 // KANBAN BOARD TUTORIAL MANIPULATIONS
 const tutorialarr = [
-    "1. Welcome to your Kanban Board! Here's how you get started.",
-    "2. Click on add '+' button to add new task.",
-    "3. Select the priority of the task and click on 'create' button.",
-    "4. To view the priority of different colors, click on the various color options in the filter tab at the top.",
-    "5. Click on the filter colors to filter the tasks. To view all tasks, double-click on any color.",
-    "6. Edit the task directly from the ticket by unlocking the lock icon, then lock it again to save.",
-    "7. Change the task priority by clicking the color band at the top of the ticket.",
-    "8. Click the delete button to activate it, then select a task to delete. Click the delete button again to deactivate it."
+    "Welcome to your Knaban Board! Here's how you get started.",
+    "1. Click on add '+' button to add new task.",
+    "2. Select the priority of the task and click on 'create' button.",
+    "3. To view the priority of different colors, click on the various color options in the filter tab at the top.",
+    "4. Click on the filter colors to filter the tasks. To view all tasks, double-click on any color.",
+    "5. Edit the task directly from the ticket by unlocking the lock icon, then lock it again to save.",
+    "6. Change the task priority by clicking the color band at the top of the ticket.",
+    "7. Click the delete button to activate it, then select a task to delete. Click the delete button again to deactivate it."
 ]
 
 const tutorialContainer = document.querySelector('.tutorial-container');
@@ -20,6 +20,7 @@ let currentStep =0;
 // showing the tutorial pop up and hiding the prev button
 function showtutorial(){
     tutorialContainer.style.display = 'flex'
+    nextBtn.innerText = 'Start'
     updateTutorialStep()
     prevBtn.style.display = "none"
 }
@@ -39,6 +40,9 @@ function updateTutorialStep(){
     if(currentStep == tutorialarr.length -1){
         nextBtn.innerText = 'End'
     }
+    else if(currentStep == 0){
+        nextBtn.innerText = 'Start'
+    }
     else{
         nextBtn.innerText = 'Next'
     }
@@ -47,6 +51,7 @@ function updateTutorialStep(){
     if(currentStep === tutorialarr.length ){
         closetutorial()
     }
+    
 }
 
 function closetutorial(){
@@ -304,4 +309,3 @@ function getidx(id){
     })
     return ticketIdx;
 }
-
