@@ -278,7 +278,7 @@
     border-radius: 8px;
     box-shadow: 0 5px 6px rgba(0, 0, 0, 0.4);
     font-family:'Lobster', cursive;
-    overflow: hidden; /*prevent content overflow*/
+    overflow-y: auto; 
     position: relative;/* to be relative to the ticket lock*/
 }
 .ticket-container:hover{
@@ -305,12 +305,12 @@
     /* margin-top: 100px; */
     /* margin-right: 5px; */
     cursor: pointer;
-    position: absolute; /* to make it absoulte to the ticket container*/
+    position: sticky; /* to make it absoulte to the ticket container*/
     bottom: 2%;
     right: 2%;
 }
 .ticket-area{
-    overflow-y: auto;
+    
     display: flex;
     flex: column;
 }
@@ -481,3 +481,4 @@
 
     }
 }
+
