@@ -209,6 +209,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     border-radius: 8px;
     /* display: block; */
+    z-index: 1000; /* to make the container remain at top of the kanban board*/
 }
 .text-area{
     /* to remove the text area resize option */
@@ -220,6 +221,7 @@
     width: 70%;
     font-size: 2rem;
     font-family:'Lobster', cursive;
+    overflow-y: auto; /* if the content exceeds the text area size then allow scrolling */
     position: relative;
 }
 .create-button{
@@ -277,7 +279,7 @@
     box-shadow: 0 5px 6px rgba(0, 0, 0, 0.4);
     font-family:'Lobster', cursive;
     overflow: hidden; /*prevent content overflow*/
-    
+    position: relative;/* to be relative to the ticket lock*/
 }
 .ticket-container:hover{
     transform: scale(1.05);
@@ -300,9 +302,17 @@
     display: flex;
     justify-content: flex-end;
     font-size: 1.3rem;
-    margin-top: 100px;
-    margin-right: 5px;
+    /* margin-top: 100px; */
+    /* margin-right: 5px; */
     cursor: pointer;
+    position: absolute; /* to make it absoulte to the ticket container*/
+    bottom: 2%;
+    right: 2%;
+}
+.ticket-area{
+    overflow-y: auto;
+    display: flex;
+    flex: column;
 }
 /* ticket area takes the remaining space and properties of ticket container */
 
