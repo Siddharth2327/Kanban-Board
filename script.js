@@ -1,3 +1,84 @@
+// KANBAN BOARD TUTORIAL MANIPULATIONS
+const tutorialarr = [
+    "Welcome to your Knaban Board! Here's how you get started.",
+    "Click on add '+' button to add new task.",
+    "Select the priority of the task and click on 'create' button.",
+    "To view the priority of different colors, click on the various color options in the filter tab at the top.",
+    "Click on the filter colors to filter the tasks. To view all tasks, double-click on any color.",
+    "Edit the task directly from the ticket by unlocking the lock icon, then lock it again to save.",
+    "Change the task priority by clicking the color band at the top of the ticket.",
+    "Click the delete button to activate it, then select a task to delete. Click the delete button again to deactivate it."
+]
+
+const tutorialContainer = document.querySelector('.tutorial-container');
+const nextBtn = document.querySelector('#next-step-button');
+const prevBtn = document.querySelector('#prev-step-button');
+const contentText = document.querySelector('#content-text');
+
+let currentStep =0;
+
+// showing the tutorial pop up and hiding the prev button
+function showtutorial(){
+    tutorialContainer.style.display = 'flex'
+    updateTutorialStep()
+    prevBtn.style.display = "none"
+}
+
+function updateTutorialStep(){
+    contentText.textContent = tutorialarr[currentStep];
+
+    // updating previous button
+    if(currentStep > 0){
+        prevBtn.style.display = 'inline-block';
+    }
+    else{
+        prevBtn.style.display = 'none'
+    }
+
+    // updating next button to end button at last tutorial
+    if(currentStep == tutorialarr.length -1){
+        nextBtn.innerText = 'End'
+    }
+
+    // closing the tutorial when clicking on close
+    if(currentStep === tutorialarr.length ){
+        closetutorial()
+    }
+}
+
+function closetutorial(){
+    tutorialContainer.style.display = 'none';
+}
+
+function nextStep(){
+    currentStep++;
+    updateTutorialStep();
+}
+
+function prevStep(){
+    currentStep--;
+    updateTutorialStep();
+}
+
+
+// adding event to the next btn and prev btn
+nextBtn.addEventListener('click',nextStep)
+prevBtn.addEventListener('click',prevStep)
+
+// showing the tutorial on the page load
+window.onload = showtutorial();
+
+
+
+
+
+
+
+
+
+
+
+// KANBAN BOARD MANIPULATIONS
 
 const addBtn = document.querySelector('.add-btn')
 const removeBtn = document.querySelector('.remove-btn')
@@ -175,7 +256,7 @@ function createTicket(color, id, task){
 
 // MODAL POP UP MANIPULATIONS AND TRIGGERING TICKET GENERATION
 
-// Adding create buttton event on the modal cont
+// Adding key event on the modal cont
 createBtn.addEventListener('click', function(e){
             const task = textArea.value;
             const id = (Math.random()*1000).toFixed(0)
@@ -188,7 +269,6 @@ createBtn.addEventListener('click', function(e){
             ticketsarr.push({ TicketColor: taskColor, id, task});
             updatelocalstorage()    
 });
-
 
 // adding border while selecting the color of the task in modal pop up
 allPriorityColors.forEach(function(colorElem){
@@ -221,3 +301,4 @@ function getidx(id){
     })
     return ticketIdx;
 }
+
