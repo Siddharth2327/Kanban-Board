@@ -178,11 +178,11 @@
     opacity: 1;
 }
 .add-btn:hover{
-    background-color: rgb(47, 162, 47);
+    color: rgb(47, 162, 47);
 }
-.remove-btn:hover{
+/* .remove-btn:hover{
     background-color: rgb(252, 40, 40);
-}
+} */
 .name-logo{
      font-family: 'Lobster', cursive;
      margin-left: 42rem; 
