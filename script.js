@@ -292,7 +292,7 @@ createBtn.addEventListener('click', function(e){
             // now we have to display: none the modal pop up after generating a ticket
             // but we should not only change the style property
             // also change the addFlag to false, for the addbtn to work properly
-            if(addBtn.style.color==' rgb(16, 246, 16)') addBtn.style.color = 'white'
+            addBtn.style.color = 'white'
             modalCont.style.display = 'none'
             addFlag = false;
             ticketsarr.push({ TicketColor: taskColor, id, task});
