@@ -13,7 +13,7 @@
     font-style: italic;
     position: fixed;
     bottom: 2rem;
-    left: 2px;
+    left: 1rem;
  }
  #tutorial-button:hover{
     transform: scale(1.09);
