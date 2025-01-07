@@ -1,6 +1,6 @@
 // KANBAN BOARD TUTORIAL MANIPULATIONS
 const tutorialarr = [
-    "Welcome to your Kanban Board! Here's how you get started.",
+    "Welcome to your Knaban Board! Here's how you get started.",
     "1. Click on add '+' button to add new task.",
     "2. Select the priority of the task and click on 'create' button.",
     "3. To view the priority of different colors, click on the various color options in the filter tab at the top.",
@@ -14,15 +14,19 @@ const tutorialContainer = document.querySelector('.tutorial-container');
 const nextBtn = document.querySelector('#next-step-button');
 const prevBtn = document.querySelector('#prev-step-button');
 const contentText = document.querySelector('#content-text');
+const tutorialBtn = document.querySelector('#tutorial-button')
 
-let currentStep =0;
+let currentStep 
+
 
 // showing the tutorial pop up and hiding the prev button
 function showtutorial(){
+    currentStep =0;
     tutorialContainer.style.display = 'flex'
     nextBtn.innerText = 'Start'
     updateTutorialStep()
     prevBtn.style.display = "none"
+    
 }
 
 function updateTutorialStep(){
@@ -55,7 +59,9 @@ function updateTutorialStep(){
 }
 
 function closetutorial(){
+    currentStep =0;
     tutorialContainer.style.display = 'none';
+    
 }
 
 function nextStep(){
@@ -74,9 +80,16 @@ nextBtn.addEventListener('click',nextStep)
 prevBtn.addEventListener('click',prevStep)
 
 // showing the tutorial on the page load
-window.onload = showtutorial();
+// window.onload = showtutorial();
+tutorialBtn.addEventListener('click', showtutorial)
 
-
+// closing tutorial while clicking on the empty space other than the tutorial window
+document.addEventListener('click', function(event){
+    if(tutorialContainer.style.display === 'flex' && 
+        !event.target.closest('.tutorial-popup') &&
+        !event.target.closest('#tutorial-button') // to avoid disfunction of tutorial button
+    ) closetutorial();
+})
 
 
 
