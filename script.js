@@ -141,7 +141,10 @@ initialize(); // calling to create function after reload
 // adding the modal pop up when add button is clicked
 addBtn.addEventListener('click', function(){
     addFlag = !addFlag;
-    if(addFlag) modalCont.style.display = 'flex'
+    if(addFlag) {
+        modalCont.style.display = 'flex'
+        textArea.value = null
+    }
     else modalCont.style.display = 'none'
 })
 
